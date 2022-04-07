@@ -25,10 +25,16 @@ steps:
       - echo "$KEY" | ssh-add -
       - mkdir -p ~/.ssh
       - echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config
-      - git add .
-      - git commit -m "CI :\:\ Updated list [skip ci]"
-      - git remote set-url origin git@github.com:Alcadramin/codewars.git
-      - git push origin main
+      - |-
+        if [[ `git status --porcelain` ]]; then
+          git add --all
+          git commit -m "CI :: Updated list [skip ci]"
+          git remote set-url origin git@github.com:Alcadramin/codewars.git
+          git push -u origin main
+        else
+          echo "No changes"
+          exit 0
+        fi
     environment:
       KEY:
         from_secret: GH_SSH_KEY
