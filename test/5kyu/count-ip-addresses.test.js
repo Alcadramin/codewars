@@ -6,8 +6,8 @@ function doTest(start, end, expected) {
   strictEqual(actual, expected, `for start = ${start}, end = ${end}\n`);
 }
 
-describe("Tests", () => {
-  it("sample tests", () => {
+describe("Count IP Addresses Tests", () => {
+  it("Basic Test", () => {
     doTest("150.0.0.0", "150.0.0.1", 1);
     doTest("10.0.0.0", "10.0.0.50", 50);
     doTest("20.0.0.10", "20.0.1.0", 246);
