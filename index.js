@@ -74,7 +74,7 @@ glob(
         // Print header
         fs.appendFile(
           f,
-          `#\n### Solutions \n\n| Rank | Name with Link | Solution | Language |\n|--|--|--|--|\n`,
+          `# Solutions \n\n| Rank | Name with Link | Solution | Language |\n|--|--|--|--|\n`,
           (err) => {
             if (err) throw new Error(err);
           }

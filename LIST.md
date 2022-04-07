@@ -1,5 +1,4 @@
-#
-### Solutions 
+# Solutions 
 
 | Rank | Name with Link | Solution | Language |
 |--|--|--|--|

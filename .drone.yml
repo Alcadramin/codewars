@@ -1,0 +1,30 @@
+---
+kind: pipeline
+name: Default
+
+steps:
+  - name: Tests
+    image: node
+    commands:
+      - npm ci
+      - npm run test
+
+  - name: Generate list
+    image: node
+    environment:
+      TOKEN:
+        from_secret: CODEWARS_TOKEN
+    commands:
+      - npm run build
+
+  - name: Push new list
+    image: appleboy/drone-git-push
+    settings:
+      branch: main
+      remote_name: origin
+      commit: true
+      commit_message: "CI :: Updated list"
+      author_name: Alcadramin
+      author_email: hello@alca.dev
+      ssh_key:
+        from_secret: GH_SSH_KEY
