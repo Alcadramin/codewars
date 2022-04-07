@@ -18,13 +18,17 @@ steps:
       - npm run build
 
   - name: Push new list
-    image: appleboy/drone-git-push
-    settings:
-      branch: main
-      remote_name: origin
-      commit: true
-      commit_message: "CI :: Updated list"
-      author_name: Alcadramin
-      author_email: hello@alca.dev
-      ssh_key:
+    image: alpine:latest
+    commands:
+      - apk add --no-cache openssh-client ca-certificates bash git
+      - eval `ssh-agent -s`
+      - echo "$KEY" | ssh-add -
+      - mkdir -p ~/.ssh
+      - echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config
+      - git add --all
+      - git diff-index --quiet HEAD --ignore-submodules
+      - git commit -m 'CI :\:\ Updated list [skip ci]'
+      - git push origin main
+    environment:
+      KEY:
         from_secret: GH_SSH_KEY
