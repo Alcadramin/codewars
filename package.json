@@ -1,0 +1,37 @@
+{
+  "name": "codewars",
+  "version": "1.0.0",
+  "description": "Codewars solutions",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha 'test/**/*.test.js'",
+    "build": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/Alcadramin/codewars.git"
+  },
+  "keywords": [
+    "codewars",
+    "kata",
+    "javascript",
+    "nodejs",
+    "mocha",
+    "chai"
+  ],
+  "author": "Alcadramin <hello@alca.dev>",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/Alcadramin/codewars/issues"
+  },
+  "homepage": "https://github.com/Alcadramin/codewars#readme",
+  "dependencies": {
+    "axios": "^0.26.1",
+    "dotenv": "^16.0.0",
+    "glob": "^7.2.0"
+  },
+  "devDependencies": {
+    "chai": "^4.3.6",
+    "mocha": "^9.2.2"
+  }
+}
