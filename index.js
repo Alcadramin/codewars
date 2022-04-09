@@ -1,26 +1,28 @@
 const glob = require("glob");
 const axios = require("axios");
 const fs = require("fs");
+const fsAsync = require("fs").promises;
 require("dotenv").config();
 
 const apiKey = process.env.TOKEN;
 
 if (!apiKey) {
-  throw new Error("TOKEN is required.")
+  throw new Error("TOKEN is required.");
 }
 
 glob(
   "src/**/*",
   { ignore: ["**/**.test.js", "**/test**/**"], nodir: true },
   (err, files) => {
-    // Kata locations
     const kataPath = files.sort(),
       fileName = "LIST.md";
 
-    // Delete old file
-    fs.unlink(fileName, (err) => {
-      if (err) throw new Error(err);
-    });
+    // Delete old file if exist
+    if (fs.existsSync(`${process.cwd()}${fileName}`)) {
+      fs.unlink(fileName, (err) => {
+        if (err) throw new Error(err);
+      });
+    }
 
     // Create new file
     fs.open(fileName, "w", (err) => {
@@ -57,7 +59,7 @@ glob(
         );
       });
 
-      Promise.all(kataRank).then((res) => {
+      Promise.all(kataRank).then(async (res) => {
         // Format and merge katas
         const mergeKatas = kataName.map(
           (el, i) =>
@@ -72,16 +74,16 @@ glob(
         );
 
         // Print header
-        fs.appendFile(
-          f,
-          `# Solutions \n\n| Rank | Name with Link | Solution | Language |\n|--|--|--|--|\n`,
-          (err) => {
+        await fsAsync
+          .appendFile(
+            f,
+            `# Solutions \n\n| Rank | Name with Link | Solution | Language |\n|--|--|--|--|\n`
+          )
+          .catch((err) => {
             if (err) throw new Error(err);
-          }
-        );
+          });
 
-        // Print table
-        fs.appendFile(f, mergeKatas.join("\n"), (err) => {
+        await fsAsync.appendFile(f, mergeKatas.join("\n")).catch((err) => {
           if (err) throw new Error(err);
         });
 
