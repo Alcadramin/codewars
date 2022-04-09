@@ -3,6 +3,7 @@
 | Rank | Name with Link | Solution | Language |
 |--|--|--|--|
 | 5 kyu | [Count Ip Addresses](https://codewars.com/kata/count-ip-addresses) | [Solution](https://github.com/Alcadramin/codewars/blob/main/src/5kyu/count-ip-addresses.js) | JavaScript |
+| 5 kyu | [Valid Parentheses](https://codewars.com/kata/valid-parentheses) | [Solution](https://github.com/Alcadramin/codewars/blob/main/src/5kyu/valid-parentheses.js) | JavaScript |
 | 6 kyu | [Break Camelcase](https://codewars.com/kata/break-camelcase) | [Solution](https://github.com/Alcadramin/codewars/blob/main/src/6kyu/break-camelcase.js) | JavaScript |
 | 6 kyu | [Find The Parity Outlier](https://codewars.com/kata/find-the-parity-outlier) | [Solution](https://github.com/Alcadramin/codewars/blob/main/src/6kyu/find-the-parity-outlier.js) | JavaScript |
 | 6 kyu | [Find The Unique Number 1](https://codewars.com/kata/find-the-unique-number-1) | [Solution](https://github.com/Alcadramin/codewars/blob/main/src/6kyu/find-the-unique-number-1.js) | JavaScript |
