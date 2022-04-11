@@ -1,0 +1,54 @@
+version: v1.0
+name: Codewars - Update List
+
+agent:
+  machine:
+    type: e1-standard-2
+    os_image: ubuntu1804
+
+blocks:
+  - name: Install dependencies
+    dependencies: []
+    task:
+      jobs:
+        - name: npm install and cache
+          commands:
+            - checkout
+            - cache restore
+            - npm ci
+            - cache store
+  - name: Test
+    dependencies: ["Install dependencies"]
+    task:
+      prologue:
+        commands:
+          - checkout
+          - cache restore
+      jobs:
+        - name: Test
+          commands:
+            - npm run test
+  - name: Create list
+    dependencies: ["Test"]
+    task:
+      secrets:
+        - name: GH_SSH_KEY
+        - name: CODEWARS_TOKEN
+      jobs:
+        - name: Create list
+          commands:
+            - ssh-keyscan -H github.com >> ~/.ssh/known_hosts
+            - chmod 600 ~/.ssh/id_rsa
+            - ssh-add ~/.ssh/id_rsa
+            - checkout
+            - cache restore
+            - npm run build
+            - >-
+              if [[ $(git status --porcelain | wc -l) -gt 0 ]]; then
+                git add --all
+                git commit -m "List :: Updated list [skip ci]"
+                git remote add upstream git@github.com:Alcadramin/codewars.git
+                git push -u upstream main
+              else
+                echo "No changes"
+              fi
