@@ -28,7 +28,7 @@ steps:
       - |-
         if [[ $(git status --porcelain | wc -l) -gt 0 ]]; then
           git add --all
-          git commit -m "CI :: Updated list [skip ci]"
+          git commit -m "List :: Updated list [skip ci]"
           git remote set-url origin git@github.com:Alcadramin/codewars.git
           git push -u origin main
         else
