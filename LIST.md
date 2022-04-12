@@ -4,6 +4,7 @@
 |--|--|--|--|
 | 4 kyu | [Permutations](https://codewars.com/kata/permutations) | [Solution](https://github.com/Alcadramin/codewars/blob/main/src/4kyu/permutations.js) | JavaScript |
 | 5 kyu | [Count Ip Addresses](https://codewars.com/kata/count-ip-addresses) | [Solution](https://github.com/Alcadramin/codewars/blob/main/src/5kyu/count-ip-addresses.js) | JavaScript |
+| 5 kyu | [Directions Reduction](https://codewars.com/kata/directions-reduction) | [Solution](https://github.com/Alcadramin/codewars/blob/main/src/5kyu/directions-reduction.js) | JavaScript |
 | 5 kyu | [The Hashtag Generator](https://codewars.com/kata/the-hashtag-generator) | [Solution](https://github.com/Alcadramin/codewars/blob/main/src/5kyu/the-hashtag-generator.js) | JavaScript |
 | 5 kyu | [Valid Parentheses](https://codewars.com/kata/valid-parentheses) | [Solution](https://github.com/Alcadramin/codewars/blob/main/src/5kyu/valid-parentheses.js) | JavaScript |
 | 6 kyu | [Break Camelcase](https://codewars.com/kata/break-camelcase) | [Solution](https://github.com/Alcadramin/codewars/blob/main/src/6kyu/break-camelcase.js) | JavaScript |
