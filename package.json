@@ -4,7 +4,8 @@
   "description": "Codewars solutions",
   "main": "index.js",
   "scripts": {
-    "test": "mocha 'test/**/*.test.js'",
+    "watch": "mocha --watch 'test/**/*.test.js'",
+    "test": "mocha 'test/**/*.test.js' --timeout 10000 --exit",
     "build": "node index.js"
   },
   "repository": {
@@ -32,6 +33,7 @@
   },
   "devDependencies": {
     "chai": "^4.3.6",
+    "eslint": "^8.13.0",
     "mocha": "^9.2.2"
   }
 }
