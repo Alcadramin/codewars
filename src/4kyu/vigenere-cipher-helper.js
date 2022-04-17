@@ -15,7 +15,6 @@ class VigenèreCipher {
   generateKey(length) {
     // codewarsftw -> passwordpas
     this.key = this.key.repeat(Math.ceil(length / this.key.length)).substring(0, length);
-    console.log(this.key)
 
     // reset cipherDict
     this.cipherDict = {
@@ -49,8 +48,6 @@ class VigenèreCipher {
     this.generateKey(str.length);
 
     str.split('').map((q) => this.cipherDict.string.push(this.findIndex(q)));
-
-    console.log(this.cipherDict.string);
 
     // FIXME: Dont convert if unicode chars.
     if (this.cipherDict.string.includes(-1)) {
