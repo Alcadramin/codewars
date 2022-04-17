@@ -2,6 +2,10 @@
 kind: pipeline
 name: Default
 
+platform:
+  os: linux
+  arch: arm64
+
 steps:
   - name: Tests
     image: node
