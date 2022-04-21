@@ -31,6 +31,8 @@ steps:
       - echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config
       - |-
         if [[ $(git status --porcelain | wc -l) -gt 0 ]]; then
+          git config --global user.email "hello@alca.dev"
+          git config --global user.name "Berkcan Uçan"
           git add --all
           git commit -m "List :: Updated list [skip ci]"
           git remote set-url origin git@github.com:Alcadramin/codewars.git
