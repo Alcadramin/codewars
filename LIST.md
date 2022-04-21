@@ -2,6 +2,7 @@
 
 | Rank | Name with Link | Solution | Language |
 |--|--|--|--|
+| 3 kyu | [Papers Please](https://codewars.com/kata/papers-please) | [Solution](https://github.com/Alcadramin/codewars/blob/main/src/3kyu/papers-please.js) | JavaScript |
 | 4 kyu | [Next Bigger Number With The Same Digits](https://codewars.com/kata/next-bigger-number-with-the-same-digits) | [Solution](https://github.com/Alcadramin/codewars/blob/main/src/4kyu/next-bigger-number-with-the-same-digits.js) | JavaScript |
 | 4 kyu | [Permutations](https://codewars.com/kata/permutations) | [Solution](https://github.com/Alcadramin/codewars/blob/main/src/4kyu/permutations.js) | JavaScript |
 | 4 kyu | [Vigenere Cipher Helper](https://codewars.com/kata/vigenere-cipher-helper) | [Solution](https://github.com/Alcadramin/codewars/blob/main/src/4kyu/vigenere-cipher-helper.js) | JavaScript |
