@@ -2,7 +2,7 @@ const validParentheses = require("../../src/5kyu/valid-parentheses");
 const chai = require("chai");
 const assert = chai.assert;
 
-describe("Tests", () => {
+describe("Valid Parentheses Tests", () => {
   it(`values: "("`, () => assert.strictEqual(validParentheses("("), false));
   it(`values: ")"`, () => assert.strictEqual(validParentheses(")"), false));
   it(`values: ""`, () => assert.strictEqual(validParentheses(""), true));
