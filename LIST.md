@@ -5,6 +5,7 @@
 | 3 kyu | [Papers Please](https://codewars.com/kata/papers-please) | [Solution](https://github.com/Alcadramin/codewars/blob/main/src/3kyu/papers-please.js) | JavaScript |
 | 4 kyu | [Next Bigger Number With The Same Digits](https://codewars.com/kata/next-bigger-number-with-the-same-digits) | [Solution](https://github.com/Alcadramin/codewars/blob/main/src/4kyu/next-bigger-number-with-the-same-digits.js) | JavaScript |
 | 4 kyu | [Permutations](https://codewars.com/kata/permutations) | [Solution](https://github.com/Alcadramin/codewars/blob/main/src/4kyu/permutations.js) | JavaScript |
+| 4 kyu | [Strip Comments](https://codewars.com/kata/strip-comments) | [Solution](https://github.com/Alcadramin/codewars/blob/main/src/4kyu/strip-comments.js) | JavaScript |
 | 4 kyu | [Vigenere Cipher Helper](https://codewars.com/kata/vigenere-cipher-helper) | [Solution](https://github.com/Alcadramin/codewars/blob/main/src/4kyu/vigenere-cipher-helper.js) | JavaScript |
 | 5 kyu | [Count Ip Addresses](https://codewars.com/kata/count-ip-addresses) | [Solution](https://github.com/Alcadramin/codewars/blob/main/src/5kyu/count-ip-addresses.js) | JavaScript |
 | 5 kyu | [Directions Reduction](https://codewars.com/kata/directions-reduction) | [Solution](https://github.com/Alcadramin/codewars/blob/main/src/5kyu/directions-reduction.js) | JavaScript |
