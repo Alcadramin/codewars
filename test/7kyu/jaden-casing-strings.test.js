@@ -2,8 +2,8 @@ const toJadenCase = require("../../src/7kyu/jaden-casing-strings");
 const chai = require("chai");
 const assert = chai.assert;
 
-describe("Tests", () => {
-  it("test", () => {
+describe("Jaden Casing Strings Tests", () => {
+  it("Basic Test", () => {
     String.prototype.toJadenCase = toJadenCase;
     var str = "How can mirrors be real if our eyes aren't real";
 
