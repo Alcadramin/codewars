@@ -15,11 +15,20 @@ glob(
   { ignore: ["**/**.test.js", "**/test**/**"], nodir: true },
   (err, files) => {
     const kataPath = files.sort(),
-      fileName = "LIST.md";
+      fileName = "LIST.md",
+      jsonName = "LIST.json",
+      jsonList = [];
 
     // Delete old file if exist
-    if (fs.existsSync(`${process.cwd()}${fileName}`)) {
+    if (
+      fs.existsSync(`${process.cwd()}${fileName}`) ||
+      fs.existsSync(`${process.cwd()}${jsonName}`)
+    ) {
       fs.unlink(fileName, (err) => {
+        if (err) throw new Error(err);
+      });
+
+      fs.unlink(jsonName, (err) => {
         if (err) throw new Error(err);
       });
     }
@@ -29,7 +38,11 @@ glob(
       if (err) throw new Error(err);
     });
 
-    const printFile = (f) => {
+    fs.open(jsonName, "w", (err) => {
+      if (err) throw new Error(err);
+    });
+
+    const printFile = (f, j) => {
       // Get kata names
       const kataName = kataPath.map((el) =>
         el.split("/")[2].replace(/\b(.js|.cr)\b/gi, "")
@@ -73,7 +86,28 @@ glob(
             }) | JavaScript |`
         );
 
-        // Print header
+        // Create JSON
+        kataName.map((el, i) =>
+          jsonList.push({
+            rank: `${res[i] === null ? "Retired" : res[i]}`,
+            name: `${el
+              .split("-")
+              .map(
+                (c) => c.charAt(0).toUpperCase() + c.slice(1).toLowerCase()
+              )}`,
+            link: `https://codewars.com/kata/${el}`,
+            solution: `https://github.com/Alcadramin/codewars/blob/main/${kataPath[i]}`,
+          })
+        );
+
+        // Write JSON
+        await fsAsync.appendFile(j, JSON.stringify(jsonList)).catch((err) => {
+          if (err) {
+            throw new Error(err);
+          }
+        });
+
+        // Write LIST.md
         await fsAsync
           .appendFile(
             f,
@@ -91,7 +125,7 @@ glob(
       });
     };
 
-    printFile(fileName);
+    printFile(fileName, jsonName);
 
     if (err) {
       throw new Error(err);
