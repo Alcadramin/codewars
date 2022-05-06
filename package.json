@@ -2,11 +2,13 @@
   "name": "codewars",
   "version": "1.0.0",
   "description": "Codewars solutions",
-  "main": "index.js",
+  "source": "panel/index.html",
   "scripts": {
     "watch": "mocha --watch 'test/**/*.test.js'",
+    "watch:panel": "parcel panel/index.html",
     "test": "mocha 'test/**/*.test.js' --timeout 10000 --exit",
-    "build": "node index.js"
+    "build": "node index.js",
+    "build:panel": "parcel build panel/index.html"
   },
   "repository": {
     "type": "git",
@@ -29,11 +31,14 @@
   "dependencies": {
     "axios": "^0.26.1",
     "dotenv": "^16.0.0",
-    "glob": "^7.2.0"
+    "glob": "^7.2.0",
+    "preact": "^10.7.1"
   },
   "devDependencies": {
     "chai": "^4.3.6",
     "eslint": "^8.13.0",
-    "mocha": "^9.2.2"
-  }
+    "mocha": "^9.2.2",
+    "parcel": "^2.5.0"
+  },
+  "browserslist": "> 0.5%, last 2 versions, not dead"
 }
