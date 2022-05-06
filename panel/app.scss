@@ -24,6 +24,62 @@ label {
   color: var(--white);
 }
 
+.button {
+  @extend .cursor-pointer;
+  white-space: pre;
+  border-radius: 0.25rem;
+  font-weight: 500;
+  font-size: 1rem;
+  border: 0;
+  color: var(--bg);
+
+  &-primary {
+    background: var(--yellow);
+  }
+
+  &-primary:hover {
+    background: var(--bright-yellow);
+  }
+}
+
+.dropdown {
+  position: absolute;
+  z-index: 1000;
+  min-width: 10rem;
+  padding: 0.5rem 0;
+  margin: 0;
+  font-size: 1rem;
+  color: var(--white);
+  text-align: left;
+  list-style: none;
+  background: var(--bright-black);
+  background-clip: padding-box;
+  border: 1px solid var(--bright-magenta);
+  border-radius: 0.25rem;
+  inset: 0px auto auto 0px;
+  transform: translate(0px, 40px);
+
+  ul,
+  li {
+    margin: 0;
+    list-style: none !important;
+    list-style-type: none !important;
+  }
+
+  ul > li::marker {
+    content: "" !important;
+  }
+
+  li {
+    @extend .flex;
+    @extend .items-center;
+
+    input[type="checkbox"] {
+      accent-color: var(--yellow);
+    }
+  }
+}
+
 .search-input {
   display: block;
   width: 100%;
@@ -53,7 +109,6 @@ label {
 .section {
   &-search {
     display: flex;
-    width: 30vw;
     min-width: 15rem;
   }
 
@@ -83,6 +138,10 @@ label {
 
 .table {
   &-td {
+    white-space: nowrap;
+  }
+
+  &-th {
     white-space: nowrap;
   }
 }
