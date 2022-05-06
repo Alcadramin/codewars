@@ -92,9 +92,8 @@ glob(
             rank: `${res[i] === null ? "Retired" : res[i]}`,
             name: `${el
               .split("-")
-              .map(
-                (c) => c.charAt(0).toUpperCase() + c.slice(1).toLowerCase()
-              )}`,
+              .map((c) => c.charAt(0).toUpperCase() + c.slice(1).toLowerCase())
+              .join(" ")}`,
             link: `https://codewars.com/kata/${el}`,
             solution: `https://github.com/Alcadramin/codewars/blob/main/${kataPath[i]}`,
           })
