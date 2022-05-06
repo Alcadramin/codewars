@@ -1,14 +1,12 @@
-import { h, Fragment } from "preact";
+import { h } from "preact";
 
 const SearchInput = ({ setValue, placeholder }) => (
-  <Fragment>
-    <input
-      className="search-input"
-      type="text"
-      onChange={(e) => setValue(e.currentTarget.value)}
-      placeholder={placeholder || ""}
-    />
-  </Fragment>
+  <input
+    className="search-input"
+    type="text"
+    onInput={(e) => setValue((e.target as HTMLInputElement).value)}
+    placeholder={placeholder || ""}
+  />
 );
 
 export default SearchInput;
