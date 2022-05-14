@@ -7,7 +7,7 @@ import { useState, useEffect, useMemo } from "preact/hooks";
 
 import isEmpty from "lodash/isEmpty";
 import Header from "./components/Header";
-import SearchInput from "./components/SearchInput";
+import Input from "./components/Input";
 import Button from "./components/Button";
 import Dropdown from "./components/Dropdown";
 import Checkbox from "./components/Checkbox";
@@ -79,7 +79,7 @@ const App = () => {
         <div className="section-search">
           <div className="mr-1 flex" style={{ position: "relative" }}>
             <Button
-              className="px-2"
+              className="px-2 button-primary"
               clickHandler={() => setDropdown(!dropdown)}
             >
               Filter Rank
@@ -104,13 +104,16 @@ const App = () => {
                     {filterRanks[q].name}
                   </li>
                 ))}
+                <Button
+                  className="px-2 mx-0-5 button-success"
+                  clickHandler={() => setDropdown(!dropdown)}
+                >
+                  Filter
+                </Button>
               </ul>
             </Dropdown>
           </div>
-          <SearchInput
-            setValue={setSearch}
-            placeholder="Search katas by name"
-          />
+          <Input setValue={setSearch} placeholder="Search katas by name" />
         </div>
       </div>
       <div className="flex justify-center items-center">
