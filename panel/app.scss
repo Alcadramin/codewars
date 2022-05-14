@@ -131,22 +131,22 @@ ul {
     max-height: 35rem;
     overflow: -moz-scrollbars-vertical;
     overflow-y: auto;
+  }
 
-    &::-webkit-scrollbar-track {
-      box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
-      -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
-      background-color: var(--white);
-    }
+  &-table::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    background-color: var(--white);
+  }
 
-    &::-webkit-scrollbar {
-      width: 6px;
-      height: 6px;
-      background-color: var(--white);
-    }
+  &-table::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+    background-color: var(--white);
+  }
 
-    &::-webkit-scrollbar-thumb {
-      background-color: var(--black);
-    }
+  &-table::-webkit-scrollbar-thumb {
+    background-color: var(--black);
   }
 }
 
