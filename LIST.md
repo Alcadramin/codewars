@@ -25,6 +25,7 @@
 | 7 kyu | [Filter Unused Digits](https://codewars.com/kata/filter-unused-digits) | [Solution](https://github.com/Alcadramin/codewars/blob/main/src/7kyu/filter-unused-digits.js) | JavaScript |
 | 7 kyu | [Isograms](https://codewars.com/kata/isograms) | [Solution](https://github.com/Alcadramin/codewars/blob/main/src/7kyu/isograms.js) | JavaScript |
 | 7 kyu | [Jaden Casing Strings](https://codewars.com/kata/jaden-casing-strings) | [Solution](https://github.com/Alcadramin/codewars/blob/main/src/7kyu/jaden-casing-strings.js) | JavaScript |
+| 7 kyu | [Leap Years](https://codewars.com/kata/leap-years) | [Solution](https://github.com/Alcadramin/codewars/blob/main/src/7kyu/leap-years.js) | JavaScript |
 | 7 kyu | [Number Star Ladder](https://codewars.com/kata/number-star-ladder) | [Solution](https://github.com/Alcadramin/codewars/blob/main/src/7kyu/number-star-ladder.js) | JavaScript |
 | 7 kyu | [Sort Numbers](https://codewars.com/kata/sort-numbers) | [Solution](https://github.com/Alcadramin/codewars/blob/main/src/7kyu/sort-numbers.js) | JavaScript |
 | 7 kyu | [Sum Of All Arguments](https://codewars.com/kata/sum-of-all-arguments) | [Solution](https://github.com/Alcadramin/codewars/blob/main/src/7kyu/sum-of-all-arguments.js) | JavaScript |
