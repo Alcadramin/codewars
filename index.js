@@ -2,13 +2,6 @@ const glob = require("glob");
 const axios = require("axios");
 const fs = require("fs");
 const fsAsync = require("fs").promises;
-require("dotenv").config();
-
-const apiKey = process.env.TOKEN;
-
-if (!apiKey) {
-  throw new Error("TOKEN is required.");
-}
 
 glob(
   "src/**/*",
@@ -45,12 +38,12 @@ glob(
     const printFile = (f, j) => {
       // Get kata names
       const kataName = kataPath.map((el) =>
-        el.split("/")[2].replace(/\b(.js|.cr)\b/gi, "")
+        el.split("/")[2].replace(/\b(.js|.cr)\b/gi, ""),
       );
 
       // Get kata extensions - Might be useful for multiple languages.
       const kataExt = kataPath.map((el) =>
-        el.split("/")[2].replace(/^[^.\r\n]+.\h*/gi, "")
+        el.split("/")[2].replace(/^[^.\r\n]+.\h*/gi, ""),
       );
 
       const kataRank = [];
@@ -59,16 +52,14 @@ glob(
       kataName.forEach((e) => {
         kataRank.push(
           axios
-            .get(
-              `https://www.codewars.com/api/v1/code-challenges/${e}?access_key=${apiKey}`
-            )
+            .get(`https://www.codewars.com/api/v1/code-challenges/${e}`)
             .then((res) => {
               return res.data.rank.name;
             })
             .catch((err) => {
               console.log(err);
               throw new Error(err);
-            })
+            }),
         );
       });
 
@@ -80,10 +71,9 @@ glob(
               .split("-")
               .map((c) => c.charAt(0).toUpperCase() + c.slice(1).toLowerCase())
               .join(
-                " "
-              )}](https://codewars.com/kata/${el}) | [Solution](https://github.com/Alcadramin/codewars/blob/main/${
-              kataPath[i]
-            }) | JavaScript |`
+                " ",
+              )}](https://codewars.com/kata/${el}) | [Solution](https://github.com/Alcadramin/codewars/blob/main/${kataPath[i]
+            }) | JavaScript |`,
         );
 
         // Create JSON
@@ -96,7 +86,7 @@ glob(
               .join(" ")}`,
             link: `https://codewars.com/kata/${el}`,
             solution: `https://github.com/Alcadramin/codewars/blob/main/${kataPath[i]}`,
-          })
+          }),
         );
 
         // Write JSON
@@ -110,7 +100,7 @@ glob(
         await fsAsync
           .appendFile(
             f,
-            `# Solutions \n\n| Rank | Name with Link | Solution | Language |\n|--|--|--|--|\n`
+            `# Solutions \n\n| Rank | Name with Link | Solution | Language |\n|--|--|--|--|\n`,
           )
           .catch((err) => {
             if (err) throw new Error(err);
@@ -129,5 +119,5 @@ glob(
     if (err) {
       throw new Error(err);
     }
-  }
+  },
 );
